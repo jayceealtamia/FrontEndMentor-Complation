@@ -1,0 +1,215 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+body {
+  width: 100%;
+  font-size: 1rem;
+  font-family: $ff-primary;
+  @include media-query(large) {
+    display: grid;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+//Item Design
+main {
+  @include media-query(large) {
+    display: flex;
+    padding: 1rem;
+    max-width: 70rem;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+.left-container {
+  @include media-query(large) {
+    max-width: 30rem;
+    margin: 1rem 4rem;
+  }
+}
+.right-container {
+  @include media-query(large) {
+    max-width: 30rem;
+  }
+}
+.item {
+  position: relative;
+
+  &-container {
+    padding: 1rem;
+  }
+  &__brand {
+    color: $clr-primary-orange;
+    font-weight: 700;
+  }
+  &__image {
+    @include media-query(large) {
+      border-radius: 0.5rem;
+    }
+  }
+  &__title {
+    line-height: 2.3rem;
+    padding: 1rem 0 1rem 0;
+  }
+  &__description {
+    color: $clr-neutral-dark-gray;
+  }
+  &__price-info {
+    display: flex;
+    padding: 1rem 0;
+    justify-content: space-between;
+    align-items: center;
+    @include media-query(large) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+  &__price {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+  }
+  &__discount {
+    padding: 0.3rem 0.5rem;
+    font-weight: 700;
+    color: $clr-primary-orange;
+    background: $clr-primary-pale-orange;
+    border-radius: 0.5rem;
+  }
+  &__price-orig {
+    font-weight: 700;
+    color: $clr-neutral-gray;
+    text-decoration: line-through;
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    background: $clr-neutral-light-gray;
+    border-radius: 0.5rem;
+
+    @include media-query(large) {
+      //max-width: 15rem;
+      padding: 1rem 1.5rem;
+      width: 30rem;
+      height: 3rem;
+    }
+    &-container {
+      @include media-query(large) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  }
+  &__count {
+    font-weight: 700;
+    text-align: center;
+  }
+  &__add,
+  &__deduct {
+    border: none;
+    background: none;
+    padding-inline: 1.5rem;
+    cursor: pointer;
+  }
+  &__add-cart {
+    margin-block: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border: none;
+    background: $clr-primary-orange;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    transform: translateY(6%);
+    cursor: pointer;
+    box-shadow: 0px 6px 26px -4px rgba(163, 94, 4, 0.5);
+    @include media-query(large) {
+      max-width: 15rem;
+      padding: 1rem 3rem;
+    }
+    &:hover {
+      background: lighten($clr-primary-orange, 10%);
+    }
+    &:active {
+      transform: translateY(8%);
+    }
+  }
+  &__icon-cart {
+    fill: $clr-neutral-white;
+  }
+}
+
+//Buttons
+.arrow--previous,
+.arrow--next {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: $clr-neutral-light-gray;
+  padding: 0.7rem;
+  border-radius: 50%;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+
+  cursor: pointer;
+  @include media-query(large) {
+    display: none;
+  }
+}
+.arrow--previous {
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  &:hover {
+    border: 2px solid orange;
+    svg {
+      stroke: $clr-primary-orange;
+    }
+  }
+
+  & svg {
+    stroke: black;
+  }
+}
+.arrow--next {
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  &:hover {
+    border: 2px solid orange;
+    svg {
+      stroke: $clr-primary-orange;
+    }
+  }
+  & svg {
+    stroke: black;
+  }
+}
+
+//Footer
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--clr-bottom-text);
+
+  @include media-query(large) {
+    padding-top: 0;
+  }
+}
+.attribution a {
+  color: var(--clr-bottom-text);
+}

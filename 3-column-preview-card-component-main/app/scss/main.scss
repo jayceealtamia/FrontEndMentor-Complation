@@ -1,0 +1,161 @@
+
+@use 'reset';
+@use 'font';
+@use 'color';
+
+
+body{
+    font-size: 15x;
+    font-family: font.$lexend-deca; 
+    min-height: 100vh;
+    background: color.$very-light-gray;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+}
+.card__icon{
+    max-width: 100%;
+    width: 50px;
+}
+// Footer
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    padding: 1rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+// Card Design
+.card{
+    padding: 3rem 2rem;
+
+    
+    &__container{
+        margin: 1rem;
+        overflow: hidden;
+        border-radius: 1rem;
+
+    }
+    &__sedands{
+        background:color.$bright-orange;
+       // border-radius:  1rem  0 0 1rem  ;
+        
+        
+    }
+    &__suvs{
+        background-color: color.$dark-cyan;
+    }
+    &__luxury{
+        background-color: color.$very-dark-cyan;
+       // border-radius:  0 1rem  1rem 0 ;
+    }
+    &__title {
+        font-family:font.$title;
+        padding: 2rem 0;
+        font-size: 2.5rem;
+        color: color.$transparent-white; 
+    }
+    &__content{
+        padding:.5rem 0  3rem 0;
+        color: color.$transparent-white;
+        line-height: 1.5rem;
+    }
+    &__button{
+        width: 60%;
+        margin: 1rem 1rem 1rem 0;
+        text-decoration: none;
+        padding:.7rem;
+        border-radius: 2rem;
+        &-sedans{
+            color: color.$bright-orange;
+            border: 3px solid color.$bright-orange;
+            
+            
+        }
+        &-sedans:hover{
+              background-color: color.$bright-orange ;
+              color: white;
+              border: 3px solid color.$transparent-white;
+             
+          } 
+        &-suvs{
+            color: color.$dark-cyan;
+            border: 3px solid color.$dark-cyan;
+        }
+        &-suvs:hover{
+              background-color: color.$dark-cyan ;
+              color: white;
+              border: 3px solid color.$transparent-white;
+        } 
+        &-suvs{
+            color: color.$dark-cyan;
+            border: 3px solid color.$dark-cyan;
+        }
+        &-suvs:hover{
+              background-color: color.$dark-cyan ;
+              color: white;
+              border: 3px solid color.$transparent-white;
+        }
+        &-luxury{
+            color: color.$very-dark-cyan;
+            border: 3px solid color.$very-dark-cyan;
+        }
+        &-luxury:hover{
+              background-color: color.$very-dark-cyan ;
+              color: white;
+              border: 3px solid color.$transparent-white;
+        } 
+
+    }
+
+}
+
+
+@media(min-width:300px){
+    .card__container{
+        min-width: 500px;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; 
+         
+    }
+    .card{
+        display: flex;
+        width: 300px;
+        height:100%;
+        flex-direction:column;
+    }
+
+
+}
+@media only screen and (max-width: 930px) and (min-width: 590px) 
+{
+    .card__sedands{
+        border-radius:  1rem 0 0 1rem;
+    }
+    .card__suvs{
+        border-radius:  0 1rem 1rem 0;
+    }
+    .card__luxury{
+        border-radius:  1rem;
+    }
+}
+    
+@media only screen and (max-width: 640px) and (min-width: 50px) {
+    .card__sedands{
+        border-radius:  1rem 1rem 0 0;
+    }
+    .card__suvs{
+        border-radius:  0;
+    }
+    .card__luxury{
+        border-radius:  0 0 1rem 1rem;
+    }
+
+
+}

@@ -1,0 +1,91 @@
+@use 'reset';
+@use 'font';
+@use 'color';
+@use 'card';
+
+
+body{
+    font-size: 15px;
+    font-family: font.$poppins;
+}
+
+
+.main-container{
+   display: grid;
+   width: min(95%, 70rem);
+   grid-auto-columns: 1fr;
+   gap:1rem; 
+   margin:5rem auto;
+   grid-template-areas:
+   'header'
+   'one'
+   'two'
+   'three'
+   'four';
+  
+}
+//Header
+.header{
+    text-align: center;
+    grid-area: header;
+    &__content{
+        margin:1rem 0;
+        padding:0 .7rem;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-inline: auto;
+    }
+    &-top-text{
+        font-weight: 200;
+        font-size: 2rem;
+    }
+    &__title{
+        font-weight: 700;
+        font-size: 2rem;
+    }
+}
+
+//text color
+.very-dark-blue{
+    color: color.$very-dark-blue; 
+}
+.grayish-blue{
+    color: color.$grayish-blue;
+ 
+}
+
+//Desktop View
+
+@media screen and (min-width: 900px) {
+    .main-container{
+        grid-template-areas: 
+        'header header header'
+        'one two four'
+        'one three four';
+    }
+    .header__content{
+        width: 50%;
+    }
+
+    .card-cyan{
+       max-height:258px;
+       max-width: 330px;
+       align-self: center;
+
+
+       
+    }
+
+    .card-blue{
+        max-height:258px;
+        max-width: 330px;
+        align-self: center;
+        
+    }
+
+}
+
+
+//Footer
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

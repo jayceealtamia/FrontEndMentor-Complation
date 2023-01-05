@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter';
+  background: #090b1a;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #1b1938;
+  color: white;
+  max-width: 500px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card__header-container {
+  position: relative;
+  width: 100%;
+}
+
+.card__header-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card__header--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #aa5cdb;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card_header-image--desktop {
+  display: none;
+}
+
+.card__body {
+  padding: 1rem;
+}
+
+.card__title {
+  text-align: center;
+  padding: .5rem .5rem;
+}
+
+.text__color--purple {
+  color: #aa5cdb;
+}
+
+.card__description {
+  text-align: center;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+  line-height: 1.5rem;
+}
+
+.card__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card_detail--center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .7rem;
+  font-family: 'Lexend Deca';
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.data-value {
+  font-size: 1rem;
+  color: white;
+  font-family: 'Inter';
+  text-transform: lowercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media (min-width: 900px) {
+  .card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    min-width: 1000px;
+    border-radius: .3rem;
+  }
+  .card__header-image {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: .3rem;
+    border-top-right-radius: .3rem;
+    background: white;
+  }
+  .card__header--overlay {
+    border-bottom-right-radius: .3rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: .3rem;
+  }
+  .card__header-container {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
+  .card__body {
+    padding: 3rem;
+  }
+  .card_header-image--mobile {
+    display: none;
+  }
+  .card_header-image--desktop {
+    display: block;
+  }
+  .card__details {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+/*# sourceMappingURL=style.css.map */

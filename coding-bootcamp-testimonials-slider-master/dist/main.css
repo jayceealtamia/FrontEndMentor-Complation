@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+/* Box sizing rules - Kevin Powell */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.button-previous,
+.button-next {
+  border: none;
+  padding: 0.5rem 0.7rem;
+  background: white;
+}
+
+.button-previous {
+  border-radius: 1rem 0 0 1rem;
+  transform: translateX(6%);
+}
+.button-previous:hover {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.24);
+}
+.button-previous:active {
+  transform: translateY(8%);
+}
+
+.button-next {
+  border-radius: 0 1rem 1rem 0;
+  transform: translateX(-6%);
+}
+.button-next:hover {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.24);
+}
+.button-next:active {
+  transform: translateY(8%);
+}
+
+.icon {
+  width: 70%;
+}
+
+.slider {
+  width: 300px;
+}
+@media (min-width: 900px) {
+  .slider {
+    display: grid;
+    grid-template-areas: "left right";
+    width: 100%;
+    height: 100%;
+  }
+}
+.slider-top-container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  background: url("/images/pattern-bg.svg") center no-repeat;
+  background-size: 100%;
+  background-position-y: 35%;
+}
+@media (min-width: 900px) {
+  .slider-top-container {
+    grid-area: right;
+  }
+}
+.slider__image-container {
+  width: 75%;
+  justify-self: center;
+  align-items: center;
+  box-shadow: 0px 19px 24px -2px rgba(0, 0, 194, 0.24);
+}
+.slider__buttons-container {
+  justify-self: center;
+  transform: translateY(-30%);
+}
+@media (min-width: 900px) {
+  .slider__buttons-container {
+    transform: translateY(-60%);
+    justify-self: flex-start;
+    padding-left: 5rem;
+  }
+}
+.slider-bottom-container {
+  padding: 3rem 0;
+  height: 300px;
+  text-align: center;
+  background: url("/images/pattern-quotes.svg") no-repeat center top;
+  background-size: 30%;
+}
+@media (min-width: 900px) {
+  .slider-bottom-container {
+    display: flex;
+    margin: auto;
+    padding: 0;
+    grid-area: left;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 900px) {
+  .slider__container-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    text-align: left;
+    transform: translateX(20%);
+    height: 200px;
+    width: 100%;
+  }
+}
+.slider__content {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: #202046;
+}
+@media (min-width: 900px) {
+  .slider__content {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+.slider__name-role {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+@media (min-width: 900px) {
+  .slider__name-role {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+.slider__name {
+  font-weight: 700;
+  color: #202046;
+  font-size: 1rem;
+}
+.slider__role {
+  font-weight: 500;
+  font-style: normal;
+  color: #babacf;
+}
+
+.toggle {
+  -webkit-animation: fadeInFromNone 800ms ease-in-out;
+          animation: fadeInFromNone 800ms ease-in-out;
+}
+
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 1fr;
+  background: url("/images/pattern-curve.svg") no-repeat;
+  background-position: bottom left;
+  background-size: 100%;
+}
+@media (min-width: 900px) {
+  body {
+    background-size: 50%;
+  }
+}
+
+.wrapper {
+  padding: 1rem;
+}
+@media (min-width: 900px) {
+  .wrapper {
+    width: 1200px;
+    height: 600px;
+  }
+}
+
+.attribution {
+  padding-top: 4rem;
+  font-size: 11px;
+  text-align: center;
+}
+@media (min-width: 900px) {
+  .attribution {
+    padding-top: 0;
+  }
+}
+
+.attribution a {
+  color: #7352eb;
+}/*# sourceMappingURL=main.css.map */

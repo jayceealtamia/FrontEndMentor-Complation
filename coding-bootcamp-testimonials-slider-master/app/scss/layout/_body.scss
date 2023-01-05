@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: $ff-primary-inter;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 1fr;
+  background: url('/images/pattern-curve.svg') no-repeat;
+  background-position: bottom left;
+  background-size: 100%;
+  @include media-query(large) {
+    background-size: 50%;
+  }
+}
+
+.wrapper {
+  padding: 1rem;
+  @include media-query(large) {
+    width: 1200px;
+    height: 600px;
+  }
+}
+
+//Footer
+.attribution {
+  padding-top: 4rem;
+  font-size: 11px;
+  text-align: center;
+  @include media-query(large) {
+    padding-top: 0;
+  }
+}
+.attribution a {
+  color: rgb(115, 82, 235);
+}

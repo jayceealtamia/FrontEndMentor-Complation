@@ -1,0 +1,173 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.accordion {
+  background: hsl(0, 0%, 100%);
+  border-radius: 1.4rem;
+  padding: 2rem;
+  margin-top: 9rem;
+  width: 330px;
+  height: 530px;
+
+  @include media-query(large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    width: 900px;
+    height: 490px;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  &__left {
+    @include media-query(large) {
+      position: relative;
+    }
+  }
+  //images container
+  &__img-container {
+    transform: translateY(-20%);
+    display: flex;
+    justify-content: center;
+    height: 100px;
+
+    //adding a background pattern in images when in mobile view
+    &::before {
+      content: url(/images/bg-pattern-mobile.svg);
+      transform: translateY(-20%);
+      @include media-query(large) {
+        display: none;
+      }
+    }
+    @include media-query(large) {
+      transform: none;
+      justify-self: center;
+      align-self: center;
+      height: 400px;
+      width: 400px;
+      overflow: hidden;
+    }
+  }
+  //woman illustration
+  &__image-mobile {
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    transform: translateY(-120px);
+    max-width: 240px;
+    @include media-query(large) {
+      display: none;
+
+      
+    }
+  }
+
+  &__image-desktop {
+    //hiding desktop image
+    display: none;
+    @include media-query(large) {
+      //showing desktop image
+      display: block;
+      transform: translate(30%, 10%);
+      width: 400px;
+      height: 300px;
+    }
+  }
+  //hiding box on mobile view
+  &__image-box {
+    display: none;
+    //showing on desktop view then apply position
+    @include media-query(large) {
+      display: block;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      left: -80px;
+      top: 150px;
+      
+    }
+  }
+
+  &__image-pattern {
+     //hiding image pattern on mobile
+     display: none;
+       //showing  image pattern on desktop and position it
+     @include media-query(large) {
+       display: block;
+       transform: translate(-70%, -5%);
+    }
+  }
+  //accordion title
+
+  &__title {
+    text-align: center;
+    padding: 0 0 1.2rem 0;
+    font-size: 1.8rem;
+    color: $ff-primary-desaturated-blue;
+    @include media-query(large) {
+      text-align: left;
+    }
+  }
+  //right part
+  &__right {
+    @include media-query(large) {
+      padding: 2rem 5rem 0 0;
+      height: 400px;
+    }
+    //
+  }
+  //container for question and answer
+  &__question-answer {
+    padding: 1rem 0;
+    border-bottom: 1px solid $divider-grayish-blue;
+  }
+  //container for question
+  &__question-container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 40px;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  //styles for question title
+  &__question {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: $ff-primary-desaturated-blue;
+    &:hover {
+      color: $ff-primary-soft-red;
+    }
+  }
+  //small arrow on the left style
+  &__arrow {
+    padding-top: 0.5rem;
+    justify-self: flex-end;
+    transition: ease-in 0.5s;
+    max-width: 10px;
+  }
+  //style for answer container
+  &__answer-container {
+    height: 0;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+    padding: 0.5rem 1rem 0 0;
+    font-size: 0.75rem;
+    cursor: pointer;
+    color: $ff-neutral-light-gray;
+  }
+}
+
+//when user click this will applied
+.active h2 {
+  font-weight: bold;
+  color: $ff-primary-desaturated-blue;
+}
+
+.active .accordion__answer-container {
+  height: 40px;
+  overflow: hidden;
+}
+.active .accordion__arrow {
+  transform: rotate(180deg);
+}
